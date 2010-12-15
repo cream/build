@@ -1,0 +1,16 @@
+pkgname=xmlserialize
+pkgver=1.0
+pkgrel=1
+pkgdesc="An extensible Python-(to|from)-xml-(un)serializer in beautiful pure-Python code."
+arch=('i686')
+url="https://github.com/jonashaag/xmlserialize.py"
+license=('BSD')
+groups=()
+depends=()
+source=(http://178.79.132.138:8080/$pkgname-$pkgver.tar.bz2)
+md5sums=('e677a0901bcfb52aa4e879eea4e6f075')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver/
+  python setup.py install --prefix=/usr --root="$pkgdir" || return 1
+}
