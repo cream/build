@@ -5,6 +5,6 @@
     "description": "An extensible Python-(to|from)-xml-(un)serializer in beautiful pure-Python code.",
     "url": "https://github.com/jonashaag/xmlserialize.py",
     "license": "BSD",
-    "source": "http://178.79.132.138:8080/$pkgname-$pkgver.tar.bz2",
-    "checksum": "e677a0901bcfb52aa4e879eea4e6f075"
+    "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
+    "checksum": "04aa24883b678600dfe3c6fda03dfe4d"
 }
