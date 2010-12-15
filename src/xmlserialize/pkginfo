@@ -1,0 +1,10 @@
+{
+    "name": "xmlserialize",
+    "version": "1.0",
+    "release": "1",
+    "description": "An extensible Python-(to|from)-xml-(un)serializer in beautiful pure-Python code.",
+    "url": "https://github.com/jonashaag/xmlserialize.py",
+    "license": "BSD",
+    "source": "http://178.79.132.138:8080/$pkgname-$pkgver.tar.bz2",
+    "checksum": "e677a0901bcfb52aa4e879eea4e6f075"
+}
