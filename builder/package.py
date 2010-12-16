@@ -38,7 +38,7 @@ class BasePackage:
         data = fd.read()
         fd.close()
 
-        e = re.compile('{{(?P<tag>.*)}}')
+        e = re.compile('{{(?P<tag>.*?)}}')
 
         data = e.sub(replace, data)
 
