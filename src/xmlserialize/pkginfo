@@ -3,8 +3,11 @@
     "version": "1.0",
     "release": "1",
     "description": "An extensible Python-(to|from)-xml-(un)serializer in beautiful pure-Python code.",
+    "short_description": "An extensible Python-(to|from)-xml-(un)serializer",
     "url": "https://github.com/jonashaag/xmlserialize.py",
     "license": "BSD",
     "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
-    "checksum": "04aa24883b678600dfe3c6fda03dfe4d"
+    "checksum": "04aa24883b678600dfe3c6fda03dfe4d",
+    "author": "Jonas Haag",
+    "author_email": "jonas@lophus.org"
 }
