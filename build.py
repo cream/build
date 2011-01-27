@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import builder
-import builder.helper
-import builder.arch
-import builder.debian
+from builder import helper
+from builder import arch
+from builder import debian
 
 import optparse
 
 BUILDERS = {
-    'arch': builder.arch.ArchPackage,
-    'debian': builder.debian.DebianPackage
+    'arch': arch.ArchPackage,
+    'debian': debian.DebianPackage
 }
 
 class Builder:
@@ -24,7 +24,7 @@ class Builder:
 
         print " » Building '{0}'…".format(pkg)
         print " » Guessing your distribution…"
-        dist = builder.helper.guess_distribution()
+        dist = helper.guess_distribution()
 
         print "   → {0}".format(dist)
 
