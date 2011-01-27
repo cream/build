@@ -1,0 +1,13 @@
+{
+    "name": "bjoern",
+    "version": "1.1",
+    "release": "1",
+    "description": "A screamingly fast Python WSGI server written in C.",
+    "short_description": "A Python WSGI server written in C.",
+    "url": "https://github.com/jonashaag/bjoern",
+    "license": "2-clause BSD",
+    "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
+    "checksum": "14714c01c45a375dc9d33f568b517df5",
+    "author": "Jonas Haag",
+    "author_email": "jonas@lophus.org"
+}
