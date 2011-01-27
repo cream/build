@@ -1,0 +1,13 @@
+{
+    "name": "pyjavascriptcore",
+    "version": "0.1",
+    "release": "1",
+    "description": "Use Python to tap into the whole power of WebKit.",
+    "short_description": "Use Python to tap into the whole power of WebKit.",
+    "url": "https://launchpad.net/pyjavascriptcore",
+    "license": "LGPL v2.1",
+    "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
+    "checksum": "5d448663a2ca0d572734a4346a2dd3c8",
+    "author": "Martin Soto",
+    "author_email": "donsoto@gmail.com "
+}
