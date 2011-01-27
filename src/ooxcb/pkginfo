@@ -1,0 +1,13 @@
+{
+    "name": "ooxcb",
+    "version": "1.1",
+    "release": "1",
+    "description": "An object-oriented X Python Binding, based on xpyb",
+    "short_description": "An X Python Binding.",
+    "url": "http://samurai-x.org",
+    "license": "2-clause BSD",
+    "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
+    "checksum": "f4e425997ca359ca72aa54123dafa66b",
+    "author": "Friedrich Weber",
+    "author_email": "fred@reichbier.de"
+}
