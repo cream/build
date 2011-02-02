@@ -14,9 +14,9 @@ locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 class DebianPackage(builder.package.BasePackage):
 
-    def __init__(self, pkg_name):
+    def __init__(self, pkg_name, pkg_dest):
 
-        builder.package.BasePackage.__init__(self, pkg_name)
+        builder.package.BasePackage.__init__(self, pkg_name, pkg_dest)
 
         self.pkg_info['timestamp'] = time.strftime('%a, %d %b %Y %H:%M:%S +0100')
         self.pkg_name = pkg_name
