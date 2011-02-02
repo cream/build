@@ -1,0 +1,10 @@
+{
+    "name": "screenhunter",
+    "version": "0.0.2",
+    "release": "2",
+    "description": "A screenshot application for the Cream Desktop Environment.",
+    "url": "https://github.com/sbillaudelle/screenhunter",
+    "license": "GPL",
+    "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
+    "checksum": "176f7cec0d42540b499df32ef65ecd96"
+}
