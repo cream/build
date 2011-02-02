@@ -6,7 +6,7 @@ arch=('i686')
 url="{{ url }}"
 license=({{ license }})
 groups=()
-depends=()
+depends=(python2 python-lxml pygtk)
 source=({{ source }})
 md5sums=('{{ checksum }}')
 

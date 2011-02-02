@@ -1,10 +1,10 @@
 {
     "name": "console",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "release": "1",
     "description": "A console for the Cream Desktop.",
     "url": "https://github.com/cream/console",
     "license": "GPL",
     "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
-    "checksum": "ae7f4f6d72d99d109e69309d13e69758"
+    "checksum": "ec6565fbf92cbf1d76b209d6301d90e4"
 }

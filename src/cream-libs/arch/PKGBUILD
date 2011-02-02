@@ -6,7 +6,7 @@ arch=('i686')
 url="{{ url }}"
 license=({{ license }})
 groups=()
-depends=()
+depends=(python2 pygobject pygtk python2-cairo python-lxml xmlserialize gpyconf librsvg dbus-python ooxcb)
 source=({{ source }})
 md5sums=('{{ checksum }}')
 
