@@ -5,8 +5,6 @@ import builder.common
 import subprocess
 import os
 
-from jinja2 import Environment, FileSystemLoader
-
 class ArchPackage(builder.package.BasePackage):
 
     def __init__(self, src, dest, jinja_env):

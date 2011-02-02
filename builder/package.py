@@ -1,9 +1,6 @@
 import os
-import sys
 import json
-import re
 import shutil
-import tempfile
 
 import builder.helper
 import builder.common

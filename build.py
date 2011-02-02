@@ -82,7 +82,7 @@ if __name__ == '__main__':
     options, args = parser.parse_args()
     package_name = args[0]
 
-    builder = Builder(package_name)
-    builder.build()
+    b = Builder(package_name)
+    b.build()
 
     print " » Done building packages"
