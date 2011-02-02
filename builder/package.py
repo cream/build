@@ -8,47 +8,33 @@ import tempfile
 import builder.helper
 import builder.common
 
-class BasePackage:
+class BasePackage(object):
 
-    def __init__(self, pkg_name, pkg_dest=None):
+    def __init__(self, src, dest, jinja_env):
 
-        pkg_info_path = os.path.join(builder.common.SRC_DIR, pkg_name, 'pkginfo')
+        self.src = src
+        self.dest = dest
+        self.jinja_env = jinja_env
+
+        pkg_info_path = os.path.join(src, 'pkginfo')
         self.pkg_info = json.load(open(pkg_info_path))
-
-        if pkg_dest:
-            self.dst = os.path.join(pkg_dest, pkg_name)
-        else:
-            tmp = tempfile.mkdtemp(prefix='cream-builder-')
-            self.dst = os.path.join(tmp, pkg_name)
 
 
     def prepare_build_tree(self):
 
-        src = os.path.join(builder.common.SRC_DIR, self.pkg_name, builder.helper.guess_distribution())
+        src = os.path.join(self.src, builder.helper.guess_distribution())
 
-        shutil.copytree(src, self.dst)
-        os.chdir(self.dst)
+        shutil.copytree(src, self.dest)
+        os.chdir(self.dest)
 
-        return self.dst
+        return self.dest
 
 
-    def process_template(self, path):
+    def process_template(self, name):
+        template = self.jinja_env.get_template(name)
 
-        def replace(m):
-            tag = m.group('tag').strip()
-            return self.pkg_info[tag]
-
-        fd = open(path, 'r')
-        data = fd.read()
-        fd.close()
-
-        e = re.compile('{{(?P<tag>.*?)}}')
-
-        data = e.sub(replace, data)
-
-        fd = open(path, 'w')
-        fd.write(data)
-        fd.close()
+        with open(name, 'w') as file_handle:
+            file_handle.write(template.render(self.pkg_info))
 
 
     def build(self):

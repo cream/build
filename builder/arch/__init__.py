@@ -5,12 +5,12 @@ import builder.common
 import subprocess
 import os
 
+from jinja2 import Environment, FileSystemLoader
+
 class ArchPackage(builder.package.BasePackage):
 
-    def __init__(self, pkg_name, pkg_dest=None):
-
-        builder.package.BasePackage.__init__(self, pkg_name, pkg_dest)
-        self.pkg_name = pkg_name
+    def __init__(self, src, dest, jinja_env):
+        builder.package.BasePackage.__init__(self, src, dest, jinja_env)
 
 
     def build(self):

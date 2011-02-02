@@ -1,16 +1,3 @@
-pkgname="{{ name }}"
-pkgver={{ version }}
-pkgrel={{ release }}
-pkgdesc="{{ description }}"
-arch=('i686')
-url="{{ url }}"
-license=({{ license }})
-groups=()
-depends=(python2 python-lxml)
-source=({{ source }})
-md5sums=('{{ checksum }}')
+{% extends "PKGBUILD.tmpl" %}
 
-build() {
-  cd $srcdir/$pkgname-$pkgver-$pkgrel/
-  python setup.py install --prefix=/usr --root="$pkgdir" || return 1
-}
+{% block depends %}python2 python-lxml{% endblock %}

@@ -1,0 +1,16 @@
+pkgname="{{ name }}"
+pkgver={{ version }}
+pkgrel={{ release }}
+pkgdesc="{{ description }}"
+arch=('i686')
+url="{{ url }}"
+license=({{ license }})
+groups=()
+depends=({% block depends %}{% endblock %})
+source=({{ source }})
+md5sums=('{{ checksum }}')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver-$pkgrel/
+  python setup.py install --prefix=/usr --root="$pkgdir" || return 1
+}

@@ -12,69 +12,77 @@ import os
 import optparse
 import tempfile
 
-BUILDERS = {
+from jinja2 import Environment, FileSystemLoader
+
+PACKAGES = {
     'arch': arch.ArchPackage,
     'debian': debian.DebianPackage
 }
 
-class Builder:
+class Builder(object):
 
-    def __init__(self):
+    def __init__(self, package_name):
 
-        self.base_path = os.path.abspath(os.curdir)
+        self.package_name = package_name
 
-        parser = optparse.OptionParser()
-        (self.options, self.args) = parser.parse_args()
+        self.base_path = os.path.dirname(os.path.abspath(__file__))
+        self.template_path = os.path.join(self.base_path, 'builder', 'templates')
+        self.package_dest = tempfile.mkdtemp(prefix='cream-builder-')
 
-        pkg = self.args[0]
+        self.distribution = helper.guess_distribution()
 
-        print " » Building '{0}'…".format(pkg)
-        print " » Guessing your distribution…"
-        dist = helper.guess_distribution()
 
-        print "   → {0}".format(dist)
+    def build_package(self, package, name):
 
-        if pkg == 'all':
-            dst = tempfile.mkdtemp(prefix='cream-builder-')
+        print " » Building '{0}' for {1}".format(name, self.distribution)
+
+        print "\n" + 40*' -' + '\n'
+        status = package.build()
+        print '\n' + 40*' -' + '\n'
+
+        if status:
+            print " » The build process was successful!"
+            print "   → You may find the package in '{0}'…".format(status)
+        else:
+            print " » Build process failed!"
+
+
+    def build(self):
+
+        if self.package_name == 'all':
             for pkg in os.listdir(SRC_DIR):
-                builder = BUILDERS[dist]
-                p = builder(pkg, dst)
+                pkg_src = os.path.join(SRC_DIR, pkg)
+                pkg_dest = os.path.join(self.package_dest, pkg)
 
-                print " » Building package {0}".format(pkg)
+                jinja_env = Environment(loader=FileSystemLoader([self.template_path, pkg_dest]))
 
-                print "\n" + 40*' -' + '\n'
-                status = p.build()
-                print '\n' + 40*' -' + '\n'
+                package = PACKAGES[self.distribution]
+                p = package(pkg_src, pkg_dest, jinja_env)
 
-                if status:
-                    print " » The build process was successful!"
-                    print "   → You may find the package in '{0}'…".format(status)
-                else:
-                    print " » Build process failed!"
+                self.build_package(p, pkg)
 
                 os.chdir(self.base_path)
-
-            print " » Done building packages"
-
         else:
-            builder = BUILDERS[dist]
-            p = builder(pkg)
+            pkg_src = os.path.join(SRC_DIR, self.package_name)
+            pkg_dest = os.path.join(self.package_dest, self.package_name)
 
-            print " » Building package for '{0}'…".format(dist)
+            jinja_env = Environment(loader=FileSystemLoader([self.template_path, pkg_dest]))
 
-            print "\n" + 40*' -' + '\n'
-            status = p.build()
-            print '\n' + 40*' -' + '\n'
+            package = PACKAGES[self.distribution]
+            p = package(pkg_src, pkg_dest, jinja_env)
 
-            if status:
-                print " » The build process was successful!"
-                print "   → You may find the package in '{0}'…".format(status)
-            else:
-                print " » Build process failed!"
+            self.build_package(p, self.package_name)
 
 
 
 
 
 if __name__ == '__main__':
-    b = Builder()
+    parser = optparse.OptionParser()
+    options, args = parser.parse_args()
+    package_name = args[0]
+
+    builder = Builder(package_name)
+    builder.build()
+
+    print " » Done building packages"
