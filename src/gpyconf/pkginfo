@@ -4,7 +4,7 @@
     "release": "1",
     "description": "A modular Python configuration framework with support for multiple backends (ConfigParser, XML, JSON, ...) and multiple frontends (GTK+, Web, ...).",
     "url": "http://gpyconf.lophus.org/",
-    "license": "BSD",
+    "license": "2-clause-BSD",
     "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
     "checksum": "9f3d1cdcfafd544f2e2397251bfc46a3"
 }

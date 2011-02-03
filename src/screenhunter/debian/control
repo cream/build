@@ -1,0 +1,3 @@
+{% extends "control.tmpl" %}
+
+{% block depends %}python-gtk2, cream-libs, python-gst0.10{% endblock %}

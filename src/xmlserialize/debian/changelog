@@ -1,5 +1,1 @@
-{{ name }} ({{ version }}-{{ release }}) stable; urgency=low
-
-  * Initial release
-
- -- Kristoffer Kleine <kris.kleine@yahoo.de>  {{ timestamp }}
+{% extends "changelog.tmpl" %}

@@ -1,0 +1,15 @@
+Source: {{ name }}
+Section: python
+Priority: optional
+Maintainer: {% block maintainer %}Kristoffer Kleine <kris.kleine@yahoo.de>{% endblock %}
+Build-Depends: cdbs (>= 0.4.49), debhelper (>= 7), python (>= 2.6), python-support
+XS-Python-Version: >= 2.6
+Standards-Version: 3.8.4
+Homepage: {{ url }}
+
+
+Package: {{ name }}
+Architecture: {% block architecture %}all{%endblock %}
+Depends: ${misc:Depends}, ${python:Depends}, {% block depends %}{% endblock %}
+Description: {{ short_description }}
+ {{ description }}
