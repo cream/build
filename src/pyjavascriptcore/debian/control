@@ -1,1 +1,1 @@
-{% extends "control.tmpl" %
+{% extends "control.tmpl" %}
