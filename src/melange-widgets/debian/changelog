@@ -1,0 +1,1 @@
+{% extends "changelog.tmpl" %}

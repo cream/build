@@ -1,0 +1,3 @@
+{% extends "control.tmpl" %}
+
+{% block depends %}cream-libs, melange, cream-pim{% endblock %}

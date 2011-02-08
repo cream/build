@@ -1,0 +1,3 @@
+{% extends "PKGBUILD.tmpl" %}
+
+{% block depends %}cream-libs melange cream-pim{% endblock %}
