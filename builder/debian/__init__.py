@@ -5,16 +5,17 @@ import builder.common
 import os
 import time
 import urllib
+import locale
 import shutil
 import tempfile
 import subprocess
 
-import locale
-locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 class DebianPackage(builder.package.BasePackage):
 
     def __init__(self, src, dest, jinja_env):
+
+        locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
         builder.package.BasePackage.__init__(self, src, dest, jinja_env)
 
