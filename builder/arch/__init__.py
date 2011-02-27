@@ -16,7 +16,7 @@ class ArchPackage(builder.package.BasePackage):
         build_dir = self.prepare_build_tree()
         self.process_template('PKGBUILD')
 
-        p = subprocess.Popen(['makepkg', '-cf'])
+        p = subprocess.Popen(['makepkg', '-cfd'])
         ret = os.waitpid(p.pid, 0)[1]
 
         for i in os.listdir(build_dir):
