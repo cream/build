@@ -7,11 +7,12 @@ import builder.common
 
 class BasePackage(object):
 
-    def __init__(self, src, dest, jinja_env):
+    def __init__(self, src, dest, jinja_env, options):
 
         self.src = src
         self.dest = dest
         self.jinja_env = jinja_env
+        self.options = options
 
         pkg_info_path = os.path.join(src, 'pkginfo')
         self.pkg_info = json.load(open(pkg_info_path))

@@ -7,8 +7,8 @@ import os
 
 class ArchPackage(builder.package.BasePackage):
 
-    def __init__(self, src, dest, jinja_env):
-        builder.package.BasePackage.__init__(self, src, dest, jinja_env)
+    def __init__(self, src, dest, jinja_env, options):
+        builder.package.BasePackage.__init__(self, src, dest, jinja_env, options)
 
 
     def build(self):

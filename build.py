@@ -21,9 +21,10 @@ PACKAGES = {
 
 class Builder(object):
 
-    def __init__(self, package_name):
+    def __init__(self, package_name, options):
 
         self.package_name = package_name
+        self.options = options
 
         self.base_path = os.path.dirname(os.path.abspath(__file__))
         self.template_path = os.path.join(self.base_path, 'builder', 'templates')
@@ -57,7 +58,7 @@ class Builder(object):
                 jinja_env = Environment(loader=FileSystemLoader([self.template_path, pkg_dest]))
 
                 package = PACKAGES[self.distribution]
-                p = package(pkg_src, pkg_dest, jinja_env)
+                p = package(pkg_src, pkg_dest, jinja_env, self.options)
 
                 self.build_package(p, pkg)
 
@@ -69,7 +70,7 @@ class Builder(object):
             jinja_env = Environment(loader=FileSystemLoader([self.template_path, pkg_dest]))
 
             package = PACKAGES[self.distribution]
-            p = package(pkg_src, pkg_dest, jinja_env)
+            p = package(pkg_src, pkg_dest, jinja_env, self.options)
 
             self.build_package(p, self.package_name)
 
@@ -80,9 +81,13 @@ class Builder(object):
 if __name__ == '__main__':
     parser = optparse.OptionParser()
     options, args = parser.parse_args()
-    package_name = args[0]
 
-    b = Builder(package_name)
+    if not args:
+	    package_name = 'all'
+    else:
+        package_name = args[0]
+
+    b = Builder(package_name, options)
     b.build()
 
     print " » Done building packages"

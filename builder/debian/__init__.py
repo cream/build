@@ -13,11 +13,11 @@ import subprocess
 
 class DebianPackage(builder.package.BasePackage):
 
-    def __init__(self, src, dest, jinja_env):
+    def __init__(self, src, dest, jinja_env, options):
 
         locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
-        builder.package.BasePackage.__init__(self, src, dest, jinja_env)
+        builder.package.BasePackage.__init__(self, src, dest, jinja_env, options)
 
         self.pkg_info['timestamp'] = time.strftime('%a, %d %b %Y %H:%M:%S +0100')
 
