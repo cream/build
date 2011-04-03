@@ -20,6 +20,7 @@ class DebianPackage(builder.package.BasePackage):
         builder.package.BasePackage.__init__(self, src, dest, jinja_env, options)
 
         self.pkg_info['timestamp'] = time.strftime('%a, %d %b %Y %H:%M:%S +0100')
+        self.pkg_info['ubuntu_release'] = self.options.ubuntu_release
 
         self.pkg_name = '{0}-{1}-{2}'.format(self.pkg_info['name'],
                                         self.pkg_info['version'],

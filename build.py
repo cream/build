@@ -80,6 +80,7 @@ class Builder(object):
 
 if __name__ == '__main__':
     parser = optparse.OptionParser()
+    parser.add_option('-r', '--ubuntu-release', dest='ubuntu_release', default='maverick')
     options, args = parser.parse_args()
 
     if not args:
