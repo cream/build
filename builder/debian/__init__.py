@@ -70,9 +70,13 @@ class DebianPackage(builder.package.BasePackage):
             self.process_template(path)
 
         os.chdir(build_dir)
-        p = subprocess.Popen(['debuild', '--no-tgz-check'])
+        if self.options.package_type == 'source':
+            p = subprocess.Popen(['debuild', '--no-tgz-check', '-S'])
+        else:
+            p = subprocess.Popen(['debuild', '--no-tgz-check'])
         ret = os.waitpid(p.pid, 0)[1]
 
+        package_path = self.dest
         for i in os.listdir(self.dest):
             if i.endswith('.deb'):
                 package_path = os.path.join(self.dest, i)
