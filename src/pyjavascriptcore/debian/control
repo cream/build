@@ -1,1 +1,3 @@
 {% extends "control.tmpl" %}
+
+{% block build_deps %}{{ super() }}cython, python-dev, libwebkit-dev{% endblock %}
