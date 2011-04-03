@@ -85,7 +85,7 @@ if __name__ == '__main__':
     options, args = parser.parse_args()
 
     if not args:
-	    package_name = 'all'
+        package_name = 'all'
     else:
         package_name = args[0]
 
