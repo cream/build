@@ -1,0 +1,3 @@
+{% extends "PKGBUILD.tmpl" %}
+
+{% block depends %}python2 cream-libs python-elixir{% endblock %}

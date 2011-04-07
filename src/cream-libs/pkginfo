@@ -1,7 +1,7 @@
 {
     "name": "cream-libs",
-    "version": "0.4",
-    "release": "2",
+    "version": "0.4.1",
+    "release": "1",
     "description": "Python libraries for the Cream Desktop. ",
     "short_description": "Python libraries for the Cream Desktop. ",
     "url": "https://github.com/cream/libs",
