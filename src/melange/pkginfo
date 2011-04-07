@@ -1,7 +1,7 @@
 {
     "name": "melange",
     "version": "0.4",
-    "release": "1",
+    "release": "2",
     "description": "A widget system for the Cream Desktop Environment.",
     "url": "https://github.com/cream/melange",
     "license": "GPL",
