@@ -1,0 +1,3 @@
+{% extends "control.tmpl" %}
+
+{% block depends %}python cream-libs python-elixir{% endblock %}
