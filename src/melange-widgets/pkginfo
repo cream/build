@@ -1,7 +1,7 @@
 {
     "name": "melange-widgets",
     "version": "0.4",
-    "release": "1",
+    "release": "2",
     "description": "Widgets for Melange",
     "url": "https://github.com/cream/melange-widgets",
     "license": "GPL",
