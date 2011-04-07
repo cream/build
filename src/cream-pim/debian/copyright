@@ -1,1 +1,1 @@
-{% extends "copyright-GPL.tmpl" %}
+{% extends "copyright-GPL-3.tmpl" %}
