@@ -6,5 +6,5 @@
     "url": "https://github.com/cream/melange",
     "license": "GPL",
     "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
-    "checksum": "cdb7350a1472e08a4383bdf892aa744c"
+    "checksum": "95014e15986e8801251892e9658f3368"
 }

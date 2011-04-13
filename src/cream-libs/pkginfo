@@ -7,7 +7,7 @@
     "url": "https://github.com/cream/libs",
     "license": "LGPL",
     "source": "http://packages.cream-project.org/source/$pkgname-$pkgver-$pkgrel.tar.bz2",
-    "checksum": "36898e7c1a274a02394c403bc5faf863",
+    "checksum": "bb1356b69059b88f68e546b12afbce65",
     "author": "The Cream Project",
     "author_email": "cream@cream-project.org"
 }
