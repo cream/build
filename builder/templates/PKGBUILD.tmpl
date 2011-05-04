@@ -12,5 +12,6 @@ md5sums=('{{ checksum }}')
 
 build() {
   cd $srcdir/$pkgname-$pkgver-$pkgrel/
+  find . -iname '*.py' -type f -exec sed -i -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' {} \;
   python2 setup.py install --prefix=/usr --root="$pkgdir" || return 1
 }
