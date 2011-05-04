@@ -12,5 +12,5 @@ md5sums=('{{ checksum }}')
 
 build() {
   cd $srcdir/$pkgname-$pkgver-$pkgrel/
-  python setup.py install --prefix=/usr --root="$pkgdir" || return 1
+  python2 setup.py install --prefix=/usr --root="$pkgdir" || return 1
 }
